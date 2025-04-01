@@ -1,7 +1,9 @@
 Overview:
 This project involves training a deep learning model for image classification using multiple architectures like DenseNet169, InceptionV3, and Xception. The notebook includes data preprocessing, model training, evaluation, and Batch Normalization visualization.
 
-NOTE: The h5 file of the ensemble model is too huge to be uploaded into the file so we are sharing the link for the kaggle notebook. Public Notebook link: https://www.kaggle.com/code/avyaya/dl-pre-final-5ec862
+Huggingface space link://huggingface.co/spaces/ChaitanyaGulhane5/Ensemble_of_pretrained_CNN
+Dataset link: https://data.mendeley.com/datasets/22p2vcbxfk/3
+ Notebook link: https://www.kaggle.com/code/chaitanyagulhane/dl-pre-final-5ec862
 
 Dataset:
 The dataset consists of images organized into different classes.
@@ -40,27 +42,52 @@ Extracts and plots Batch Normalization (BN) activations from different epochs.
 
 Saves the plots for further analysis.
 
-Results
+Results:
 The model successfully classifies images with high accuracy.
 
 The Batch Normalization activations are plotted for visualization.
 
 Performance is evaluated using precision-recall and confusion matrix.
 
-How to Use
+How to Use Huggingface app.py: 
+Click the 'Select a Random Image and Predict' button.
+
+The model selects an image from the dataset and predicts its disease class.
+
+Displays confidence level and treatment suggestions.
+
+ Upload Your Own Image
+
+Upload a leaf image in JPG, JPEG, or PNG format.
+
+Click 'Predict Uploaded Image' to classify the disease.
+
+Confidence score and treatment information are displayed.
+
+Model Prediction Pipeline:
+
+Preprocessing: Images are resized to 256x256 and normalized.
+
+Prediction: The image is passed through the ensemble CNN model.
+
+Softmax Activation: Outputs probabilities for each class.
+
+Disease Classification: The highest probability determines the predicted class.
+
+Display Results: The app shows the disease name, confidence score, and treatment suggestions.
+
 Install dependencies:
 
+Ensure you have Python 3.7+ and install the required dependencies:
 
-pip install tensorflow numpy pandas matplotlib opencv-python scikit-learn
+pip install -r requirements.txt
 
-Run the Jupyter Notebook to preprocess data and train the model.
+Run the Application:
 
-Check the saved BN plots in the bn_plots/ directory.
+streamlit run app.py
 
-Future Improvements:
-Fine-tuning model parameters for better performance.
+Contributors:
 
-Exploring additional augmentation techniques.
+Chaitanya Gulhane (221AI015)
 
-Implementing transfer learning with more architectures.
-
+Gagan Deepankar (221AI019)
